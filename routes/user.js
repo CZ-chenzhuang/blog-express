@@ -11,8 +11,8 @@ router.post('/login', function(req, res, next) {
     result.then(val => {
       if (val.username) {
         // 设置session
-        req.session.username = username
-        req.session.password = password
+        req.session.username = val.username
+        req.session.realname = val.password
         res.json(
             new SuccessModel('登录成功')
         )
